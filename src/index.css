@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,14 +6,14 @@
 @layer base {
     :root {
       --text: #03020d;
-      --background: #eeeefc;
+      --background: #ffffff;
       --primary: #4d4af2;
       --secondary: #c695ea;
       --accent: #cebefe;
     }
     .dark {
       --text: #f3f2fd;
-      --background: #030311;
+      --background: #1f1f1f;
       --primary: #0f0db5;
       --secondary: #47156a;
       --accent: #110141;

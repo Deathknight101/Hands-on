@@ -11,8 +11,7 @@ export default {
         accent: "var(--accent)",
       },
       fontFamily: {
-        heading: ["Work Sans"],
-        text: ["Merriweather"],
+        primary: "Inter",
       },
     },
   },
