@@ -1,11 +1,12 @@
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaMoon } from "react-icons/fa";
 import { MdSunny } from "react-icons/md";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = ({ darkMode, toggleTheme }) => {
   const path = useLocation().pathname;
   const navigate = useNavigate();
-  const user = true;
+  const { logOut, user } = useAuth();
   const textStrokeStyle = {
     WebkitTextStroke: "0.5px white",
     textStroke: "0.5px white",
@@ -58,7 +59,10 @@ const Navbar = ({ darkMode, toggleTheme }) => {
               {links}
             </ul>
           </div>
-          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-white">
+          <h1
+            className="selection:none text-xl md:text-3xl lg:text-5xl font-bold text-white cursor-pointer"
+            onClick={() => navigate("/")}
+          >
             Hands<span style={textStrokeStyle}>ON</span>
           </h1>
           <button
@@ -90,12 +94,12 @@ const Navbar = ({ darkMode, toggleTheme }) => {
                     tabIndex={0}
                     role="button"
                     className="tooltip flex justify-center items-center  rounded-full tooltip-left btn btn-circle"
-                    data-tip="displayName"
+                    data-tip={user.displayName}
                   >
                     <div className="w-12 rounded-full">
                       <img
-                        className="rounded-full"
-                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                        className="rounded-full object-cover aspect-square"
+                        src={user.photoURL}
                       />
                     </div>
                   </div>
@@ -120,7 +124,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
                 </div>
                 <button
                   className="btn bg-transparent hover:bg-white text-white hover:text-primary border-white hover:border-white rounded-none"
-                  onClick={() => navigate("/login")}
+                  onClick={() => logOut()}
                 >
                   SIGN OUT
                 </button>
@@ -129,7 +133,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
           ) : (
             <>
               <button
-                className="btn bg-transparent hover:bg-white text-white hover:text-primary border-white hover:border-white"
+                className="btn bg-transparent hover:bg-white text-white hover:text-primary rounded-none border-white hover:border-white"
                 onClick={() => navigate("/login")}
               >
                 SIGN IN
