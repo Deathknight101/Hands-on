@@ -1,6 +1,8 @@
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { FaMoon } from "react-icons/fa";
+import { MdSunny } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar = ({ darkMode, toggleTheme }) => {
   const path = useLocation().pathname;
   const navigate = useNavigate();
   const user = true;
@@ -29,8 +31,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-primary py-5">
-      <div className="navbar container mx-auto px-2 md:px-4">
+    <div className="bg-primary py-5 shadow-none">
+      <div className="navbar container mx-auto px-2 md:px-4 shadow-none">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -59,6 +61,20 @@ const Navbar = () => {
           <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-white">
             Hands<span style={textStrokeStyle}>ON</span>
           </h1>
+          <button
+            onClick={() => toggleTheme()}
+            className="btn ml-4 btn-circle bg-transparent border-none text-2xl hover:border-none hover:bg-white"
+          >
+            {darkMode ? (
+              <>
+                <MdSunny className="text-3xl text-yellow-500"></MdSunny>
+              </>
+            ) : (
+              <>
+                <FaMoon className="text-gray-800"></FaMoon>
+              </>
+            )}
+          </button>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="flex justify-center gap-5 text-white px-1 text-lg font-light">
