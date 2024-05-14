@@ -1,11 +1,12 @@
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import useAuth from "./../../hooks/useAuth";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { signInUser } = useAuth();
 
   const handleLogin = (e) => {
@@ -20,7 +21,11 @@ const Login = () => {
       .then(() => {
         toast.success("Signed In Successfully! Redirecting..");
         setTimeout(() => {
-          navigate("/");
+          if (location?.state?.from) {
+            navigate(location?.state?.from);
+          } else {
+            navigate("/");
+          }
         }, 1000);
       })
       .catch((err) => toast.error(err.message));

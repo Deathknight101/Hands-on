@@ -13,7 +13,9 @@ const Root = () => {
   return (
     <>
       <Navbar darkMode={darkMode} toggleTheme={toggleTheme}></Navbar>
-      <Outlet></Outlet>
+      <div className="min-h-[74.3vh]">
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </>
   );

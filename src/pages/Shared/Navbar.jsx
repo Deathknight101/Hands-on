@@ -115,7 +115,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
                     </Link>
                     <hr />
                     <Link
-                      to={"/"}
+                      to={"/add-volunteer-post"}
                       className="btn bg-primary text-background hover:bg-primary hover:text-background border-none rounded-none w-full"
                     >
                       Add Volunteer Post

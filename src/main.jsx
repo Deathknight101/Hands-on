@@ -8,6 +8,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Toaster } from "sonner";
 import AuthProvider from "./providers/AuthProvider";
 import Login from "./pages/Login/Login";
+import AddVolunteer from "./pages/AddVolunteer/AddVolunteer";
+import PrivateRoute from "./routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,18 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/add-volunteer-post",
+        element: (
+          <PrivateRoute>
+            <AddVolunteer></AddVolunteer>
+          </PrivateRoute>
+        ),
       },
     ],
   },
