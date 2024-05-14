@@ -45,7 +45,7 @@ const VolunteerPostDetails = () => {
         }
       })
       .catch((err) => {
-        toast.error(err.message);
+        toast.error(err.response.data.message);
         document.getElementById("my_modal_5").close();
         form.volunteer_suggestion.value = "";
       });
@@ -89,10 +89,13 @@ const VolunteerPostDetails = () => {
           </div>
           <div className="flex-1 flex items-end mt-4">
             <button
-              className="btn bg-primary text-white border-none rounded-none hover:bg-primary hover:text-white w-full"
+              className={`btn bg-primary text-white border-none rounded-none hover:bg-primary hover:text-white w-full disabled:bg-red-900 disabled:text-red-500`}
               onClick={() => document.getElementById("my_modal_5").showModal()}
+              disabled={data.number_of_volunteers === 0 ? true : false}
             >
-              Be a Volunteer
+              {data.number_of_volunteers === 0
+                ? "Fully Booked"
+                : "Be a Volunteer"}
             </button>
           </div>
         </div>
