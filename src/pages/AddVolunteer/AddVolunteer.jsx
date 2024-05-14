@@ -20,7 +20,10 @@ const AddVolunteer = () => {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+    if (name === "number_of_volunteers") {
+      value = parseInt(value);
+    }
     setFormData({
       ...formData,
       [name]: value,
