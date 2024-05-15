@@ -14,12 +14,13 @@ import VolunteerPostDetails from "./pages/VolunteerPostDetails/VolunteerPostDeta
 import NeedVolunteers from "./pages/NeedVolunteers/NeedVolunteers";
 import ManagePost from "./pages/ManagePost/ManagePost";
 import UpdateVolunteer from "./pages/UpdateVolunteer/UpdateVolunteer";
+import Error from "./pages/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement: <></>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
