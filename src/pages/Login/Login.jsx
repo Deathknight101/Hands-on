@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { signInUser } = useAuth();
+  const { signInUser, signInWithGoogle } = useAuth();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,6 +32,14 @@ const Login = () => {
       .catch((err) => toast.error(err.message));
 
     console.log(data);
+  };
+
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
+      .then(() => {
+        toast.success("Signed In Successfully! Redirecting..");
+      })
+      .catch((err) => toast.error(err.message));
   };
   return (
     <div>
@@ -95,8 +103,15 @@ const Login = () => {
                       >
                         Sign In
                       </button>
+                      <hr className="my-2" />
+                      <button
+                        type="button"
+                        onClick={() => handleGoogleLogin()}
+                        className="btn w-full bg-primary text-white border-primary rounded-md hover:bg-primary hover:border-primary hover:text-white"
+                      >
+                        Sign In With Google
+                      </button>
                     </div>
-
                     <div className="text-center">
                       <p className="text-base text-text">
                         Don`t have an account?{" "}
