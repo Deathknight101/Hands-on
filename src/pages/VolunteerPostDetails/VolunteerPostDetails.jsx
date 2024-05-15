@@ -55,7 +55,7 @@ const VolunteerPostDetails = () => {
     <div className="container mx-auto px-2 py-20">
       <div className="flex flex-col lg:flex-row justify-between gap-5">
         <div className="flex-1">
-          <img src={data.thumbnail} className="object-cover" />
+          <img src={data.thumbnail} className="object-cover w-full" />
         </div>
         <div className="flex-1 text-text flex flex-col">
           <h1 className="uppercase font-bold badge badge-sm -ml-1">
