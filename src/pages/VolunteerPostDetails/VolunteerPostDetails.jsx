@@ -21,6 +21,9 @@ const VolunteerPostDetails = () => {
 
     const volunteer_data = {
       post_id: data._id,
+      post_title: data.title,
+      post_deadline: data.deadline,
+      post_category: data.category,
       volunteer_name: form.volunteer_name.value,
       volunteer_email: form.volunteer_email.value,
       volunteer_suggestion: form.volunteer_suggestion.value,

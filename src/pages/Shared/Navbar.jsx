@@ -108,15 +108,15 @@ const Navbar = ({ darkMode, toggleTheme }) => {
                     className="dropdown-content mt-2 z-[50] p-2 shadow bg-background border-primary border text-text w-52 flex flex-col gap-y-1 font-bold"
                   >
                     <Link
-                      to={"/"}
-                      className="btn bg-primary text-background hover:bg-primary hover:text-background border-none rounded-none w-full"
+                      to={"/manage-posts"}
+                      className="btn bg-primary text-white hover:text-white hover:bg-primary border-none rounded-none w-full"
                     >
                       Manage My Posts
                     </Link>
                     <hr />
                     <Link
                       to={"/add-volunteer-post"}
-                      className="btn bg-primary text-background hover:bg-primary hover:text-background border-none rounded-none w-full"
+                      className="btn bg-primary text-white hover:text-white hover:bg-primary border-none rounded-none w-full"
                     >
                       Add Volunteer Post
                     </Link>
