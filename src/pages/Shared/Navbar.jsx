@@ -27,7 +27,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
           path === "/need-volunteers" && "font-semibold"
         }`}
       >
-        <NavLink to={"/need-volunteers"}>Need Volunteers?</NavLink>
+        <NavLink to={"/need-volunteers"}>Need Volunteers</NavLink>
       </li>
     </>
   );

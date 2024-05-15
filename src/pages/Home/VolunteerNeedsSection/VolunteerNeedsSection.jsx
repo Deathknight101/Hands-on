@@ -14,8 +14,7 @@ const VolunteerNeedsSection = () => {
       setData(res.data);
       setLoading(false);
     });
-    setLoading(false);
-  }, [loading, axiosPublic]);
+  }, [axiosPublic]);
 
   return (
     <div>
@@ -27,7 +26,7 @@ const VolunteerNeedsSection = () => {
       {/* CARDS */}
       {loading ? (
         <>
-          <div className="py-40">
+          <div className="py-40 flex justify-center items-center">
             <span className="loading loading-spinner loading-lg"></span>
           </div>
         </>
