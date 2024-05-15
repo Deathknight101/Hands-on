@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { GrTable } from "react-icons/gr";
+import { Helmet } from "react-helmet-async";
 const NeedVolunteers = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -31,6 +32,9 @@ const NeedVolunteers = () => {
 
   return (
     <div className="container mx-auto px-4 my-5">
+      <Helmet>
+        <title>HandsON | Need Volunteer Posts</title>
+      </Helmet>
       <div className="my-5 flex gap-5">
         <input
           type="text"

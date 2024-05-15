@@ -8,6 +8,7 @@ import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { toast } from "sonner";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 const VolunteerPostDetails = () => {
   let loaded_data = useLoaderData();
   const [data, SetData] = useState(loaded_data);
@@ -56,6 +57,9 @@ const VolunteerPostDetails = () => {
 
   return (
     <div className="container mx-auto px-2 py-20">
+      <Helmet>
+        <title>HandsON | {data.title}</title>
+      </Helmet>
       <div className="flex flex-col lg:flex-row justify-between gap-5">
         <div className="flex-1">
           <img src={data.thumbnail} className="object-cover w-full" />

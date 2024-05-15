@@ -3,6 +3,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import useAuth from "./../../hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -34,6 +35,9 @@ const Login = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>HandsON | Sign In</title>
+      </Helmet>
       <section className="py-10 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">

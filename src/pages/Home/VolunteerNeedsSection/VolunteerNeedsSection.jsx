@@ -10,7 +10,8 @@ const VolunteerNeedsSection = () => {
 
   useEffect(() => {
     setLoading(true);
-    axiosPublic.get("/volunteer-posts/upcoming").then((res) => {
+    axiosPublic.get("/volunteer-posts/upcoming/get").then((res) => {
+      console.log(res.data);
       setData(res.data);
       setLoading(false);
     });

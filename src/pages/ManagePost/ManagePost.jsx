@@ -5,6 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import { toast } from "sonner";
 import { MdCancel } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ManagePost = () => {
   const axiosSecure = useAxiosSecure();
@@ -83,6 +84,9 @@ const ManagePost = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 container mx-auto px-1 py-2">
+      <Helmet>
+        <title>HandsON | Manage Posts</title>
+      </Helmet>
       <div className="border-text border p-2 min-h-[60vh]">
         <h1 className="text-center text-text mt-8 mb-4 text-2xl">
           My Need Volunteer Posts

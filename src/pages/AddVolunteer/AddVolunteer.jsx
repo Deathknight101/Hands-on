@@ -4,6 +4,7 @@ import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { toast } from "sonner";
+import { Helmet } from "react-helmet-async";
 
 const AddVolunteer = () => {
   const { user } = useAuth();
@@ -70,6 +71,9 @@ const AddVolunteer = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>HandsON | Add Post</title>
+      </Helmet>
       <section className="py-10 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
