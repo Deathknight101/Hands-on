@@ -63,7 +63,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/volunteer-post-details/${params.id}`),
+          fetch(`https://b9-a11-backend.vercel.app/volunteer-post-details/${params.id}`),
       },
       {
         path: "/update-volunteer-post/:id",
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/volunteer-post-details/${params.id}`),
+          fetch(`https://b9-a11-backend.vercel.app/volunteer-post-details/${params.id}`),
       },
     ],
   },

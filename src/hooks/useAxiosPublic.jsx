@@ -1,6 +1,6 @@
 import axios from "axios";
 export const axiosPublic = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://b9-a11-backend.vercel.app",
 });
 
 const useAxiosPublic = () => {
